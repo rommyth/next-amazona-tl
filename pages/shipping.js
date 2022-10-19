@@ -71,7 +71,7 @@ export default function ShippingScreen() {
           )}
         </div>
         <div className="mb-4">
-          <label htmlFor="fullName">Address</label>
+          <label htmlFor="address">Address</label>
           <input
             type="text"
             className="w-full"
@@ -86,7 +86,7 @@ export default function ShippingScreen() {
           )}
         </div>
         <div className="mb-4">
-          <label htmlFor="fullName">City</label>
+          <label htmlFor="city">City</label>
           <input
             type="text"
             className="w-full"
@@ -100,7 +100,7 @@ export default function ShippingScreen() {
           )}
         </div>
         <div className="mb-4">
-          <label htmlFor="fullName">Postal Code</label>
+          <label htmlFor="postalCode">Postal Code</label>
           <input
             type="text"
             className="w-full"
@@ -114,7 +114,7 @@ export default function ShippingScreen() {
           )}
         </div>
         <div className="mb-4">
-          <label htmlFor="fullName">Country</label>
+          <label htmlFor="country">Country</label>
           <input
             type="text"
             className="w-full"
