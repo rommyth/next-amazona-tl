@@ -5,7 +5,7 @@ import db from '../../../utils/db';
 const handler = async (req, res) => {
   const session = await getSession({ req });
   if (!session) {
-    return res.state(401).send('signin requred');
+    return res.status(401).send('signin required');
   }
 
   const { user } = session;
@@ -18,5 +18,4 @@ const handler = async (req, res) => {
   const order = await newOrder.save();
   res.status(201).send(order);
 };
-
 export default handler;
