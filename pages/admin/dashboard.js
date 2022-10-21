@@ -118,11 +118,11 @@ export default function AdminDashboardScreen() {
                   <Link href="/admin/orders">View Users</Link>
                 </div>
               </div>
-              <h2 className="text-xl">Sales Report</h2>
+              {/* <h2 className="text-xl">Sales Report</h2>
               <Bar
                 options={{ legend: { display: true, position: 'right' } }}
                 data={data}
-              />
+              /> */}
             </div>
           )}
         </div>
