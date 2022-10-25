@@ -37,6 +37,10 @@ a {
   @apply rounded bg-amber-200 py-2 px-4 shadow outline-none hover:bg-amber-400 active:bg-amber-500;
 }
 
+.primary-button:disabled {
+  @apply rounded bg-amber-100 py-2 px-4 shadow outline-none;
+}
+
 .default-button {
   @apply rounded bg-gray-200 py-2 px-4 text-black shadow outline-none hover:bg-gray-400 active:bg-gray-500;
 }

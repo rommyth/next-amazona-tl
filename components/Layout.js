@@ -11,12 +11,16 @@ import DropdownLink from './DropdownLink';
 import Cookies from 'js-cookie';
 import { useRouter } from 'next/router';
 
+import { MagnifyingGlassIcon } from '@heroicons/react/24/outline';
+
 export default function Layout({ title, children }) {
   const router = useRouter();
   const { status, data: session } = useSession();
   const { state, dispatch } = useContext(Store);
   const { cart } = state;
   const [cartItemsCount, setCartItemsCount] = useState(0);
+  const [search, setSearch] = useState('');
+
   useEffect(() => {
     setCartItemsCount(cart.cartItems.reduce((a, c) => a + c.quantity, 0));
   }, [cart.cartItems]);
@@ -28,6 +32,10 @@ export default function Layout({ title, children }) {
     router.push(data.url);
   };
 
+  const submitHandler = (e) => {
+    e.preventDefault();
+    router.push(`/search?query=${search}`);
+  };
   return (
     <>
       <Head>
@@ -44,6 +52,23 @@ export default function Layout({ title, children }) {
             <Link href={'/'}>
               <a className="text-lg font-bold">amazona</a>
             </Link>
+            <div className="hidden md:block">
+              <form
+                className="flex items-center justify-center"
+                onSubmit={submitHandler}
+              >
+                <input
+                  type="text"
+                  name="query"
+                  id="query"
+                  placeholder="Saerch Product"
+                  onChange={(e) => setSearch(e.target.value)}
+                />
+                <button className="primary-button" type="submit">
+                  <MagnifyingGlassIcon className="w-5 h-6" />
+                </button>
+              </form>
+            </div>
             <div>
               <Link href={'/cart'}>
                 <a className="px-2">
